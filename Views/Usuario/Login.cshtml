@@ -1,0 +1,31 @@
+@model Usuario
+@{
+    ViewData["Title"] = "Login";
+}
+<style>
+    body {
+        background-image: url("https://cdls.org.br/wp-content/uploads/cdlce_base/2020/07/iStock-1223604108.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+<form method="POST" asp-action="Login">
+
+    <p>
+        <label asp-for="Login">Seu login:</label>
+        <input asp-for="Login" required>
+    </p>
+    <p>
+        <label asp-for="Senha">Senha:</label>
+        <input asp-for="Senha" required>
+    </p>
+    <p>
+        <input type="submit" value="Acessar">
+    </p>
+
+    <p>
+        @ViewBag.Mensagem
+    </p>
+
+</form>

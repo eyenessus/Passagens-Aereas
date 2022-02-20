@@ -1,0 +1,46 @@
+@model List<PacotesTuristicos>
+    @{
+        ViewData["Title"] = "Listagem de Pacotes";
+    }
+     <style>
+        body {
+background-image : url("https://img.elo7.com.br/product/zoom/21AE5CF/papel-de-parede-nuvens-fundo-azul-ceu-vinil-papel-de-parede-quarto-bebe.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;}
+
+    </style>
+    <style>
+        table{
+            color: white;
+        }
+    </style>
+    <table border="2" class="pacotes">
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Origem</td>
+            <td>Destino</td>
+            <td>Atrativos</td>
+            <td>Saida</td>
+            <td>Retorno</td>
+            <td>Usuario</td>
+        </tr>
+        @foreach (PacotesTuristicos b in Model){
+            <tr>
+                <td>@b.Id</td>
+                <td>@b.Nome</td>
+                <td>@b.Origem</td>
+                <td>@b.Destino</td>
+                <td>@b.Atrativos</td>
+                <td>@b.Saida</td>
+                <td>@b.Retorno</td>
+                <td>@b.Usuario</td>
+            
+             <td>
+                    <a href="/Pacotes/Editar?Id=@b.Id">Alterar</a>  |
+                    <a href="/Pacotes/Excluir?Id=@b.Id">Remover</a>   |
+                </td>
+                </tr>
+        }
+    </table>

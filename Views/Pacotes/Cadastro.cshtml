@@ -1,0 +1,52 @@
+@model PacotesTuristicos
+@{
+    ViewData["Title"] = "Cadastro";
+}
+ <style>
+        body {
+background-image : url("https://aeromagazine.uol.com.br/media/versions/boeing-737-800-gol-pr-guc_free_big.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;}
+
+    </style>
+    <style>
+        form {
+            color:white;
+        }
+    </style>
+<form method="POST" asp-action="Cadastro">
+    <p>
+        <label asp-for="Nome">Nome:</label>
+        <input asp-for="Nome" required>
+    </p>
+    <p>
+        <label asp-for="Origem">Origem:</label>
+        <input asp-for="Origem" required>
+    </p>
+    <p>
+        <label asp-for="Destino">Destino:</label>
+        <input asp-for="Destino" required>
+    </p>
+    <p>
+        <label asp-for="Atrativos">Atrativos</label>
+        <input asp-for="Atrativos"required>
+
+    </p>
+ <p>
+        <label asp-for="Saida">Saida:</label>
+        <input asp-for="Saida" required>
+    </p>
+    <p>
+        <label asp-for="Retorno">Retorno:</label>
+        <input asp-for="Retorno" required>
+    </p>
+    <p>
+        <label asp-for="Usuario">Usuario:</label>
+        <input asp-for="Usuario" required>
+    </p>
+    <p>
+        <input type="submit" value="Cadastrar">
+    </p>
+
+</form>

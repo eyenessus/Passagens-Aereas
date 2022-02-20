@@ -1,0 +1,24 @@
+@model FaleConosco
+@{
+    ViewData["Title"] = "Fale Conosco";
+}
+ <style>
+        body {
+background-image : url("https://cdls.org.br/wp-content/uploads/cdlce_base/2020/07/iStock-1223604108.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;}
+
+    </style>
+<form method="POST" asp-action="FaleConosco">
+  
+    <p>
+        <label asp-for="Mensagem">Sua Mensagem:</label>
+        <input asp-for="Mensagem" >
+    </p>
+   
+    <p>
+        <input type="submit" value="Cadastrar">
+    </p>
+
+</form>

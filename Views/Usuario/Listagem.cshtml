@@ -1,0 +1,37 @@
+@model List<Usuario>
+
+    @{
+        ViewData["Title"] = "Listagem de Usuarios";
+    }
+ <style>
+        body {
+background-image : url("https://e-tinet.com/wp-content/uploads/2020/02/adicionar-usuario-no-linux.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 500px;}
+    </style>
+    <table border="3" class="tabela">
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Login</td>
+            <td>Senha</td>
+            <td>Data Nascimento</td>
+            <td>Operacões</td>
+        </tr>
+
+        @foreach(Usuario u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                <td>@u.Nome</td>
+                <td>@u.Login</td>
+                <td>@u.Senha</td>
+                <td>@u.DataNascimento</td>
+                <td>
+                    <a href="/Usuario/Editar?Id=@u.Id">Alterar</a>  |
+                    <a href="/Usuario/Excluir?Id=@u.Id" onclick="return confirm('Deseja remover?')";>Remover</a> |
+                </td>
+            </tr>
+        }
+    </table>
